@@ -1,5 +1,7 @@
 using CadastroProdutoMVC.Controller;
 using CadastroProdutoMVC.Model;
+using CadastroProdutoMVC.View;
+using System.Security.Cryptography;
 
 namespace CadastroProdutoMVC
 {
@@ -49,12 +51,14 @@ namespace CadastroProdutoMVC
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
+            FrmBase frmBase = new FrmBase(FrmBase.Acao.Adicionar);
+            frmBase.ShowDialog();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            FrmBase frmBase = new FrmBase(FrmBase.Acao.Alterar);
+            frmBase.ShowDialog();
         }
 
         private void Excluir_Click(object sender, EventArgs e)
@@ -64,7 +68,7 @@ namespace CadastroProdutoMVC
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
         private void DesenharListView()
         {

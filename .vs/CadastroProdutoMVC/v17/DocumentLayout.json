@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\model\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\model\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\controller\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\controller\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\model\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\model\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\model\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\model\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\fkrf\\source\\repos\\cadastroprodutomvc\\cadastroprodutomvc\\view\\frmbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\view\\frmbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdutoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
+              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
+              "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
+              "RelativeToolTip": "CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAAGUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T15:52:16.745Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -40,61 +45,23 @@
               "RelativeDocumentMoniker": "CadastroProdutoMVC\\Controller\\ProdutoController.cs",
               "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Controller\\ProdutoController.cs",
               "RelativeToolTip": "CadastroProdutoMVC\\Controller\\ProdutoController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA5wB4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAwwDcAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:06:35.496Z",
+              "WhenOpened": "2025-03-16T14:37:54.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProdutoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "RelativeToolTip": "CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAewCcAAAARAAAAAAAAAA==",
+              "Title": "FrmBase.cs",
+              "DocumentMoniker": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmBase.cs",
+              "RelativeDocumentMoniker": "CadastroProdutoMVC\\View\\FrmBase.cs",
+              "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmBase.cs",
+              "RelativeToolTip": "CadastroProdutoMVC\\View\\FrmBase.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAawFIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T00:49:57.088Z",
+              "WhenOpened": "2025-03-16T14:38:01.751Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Conexao.cs",
-              "DocumentMoniker": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\Conexao.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Model\\Conexao.cs",
-              "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\Conexao.cs",
-              "RelativeToolTip": "CadastroProdutoMVC\\Model\\Conexao.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T00:43:23.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "RelativeToolTip": "CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowB4AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T00:40:47.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmPrincipal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "ToolTip": "C:\\Users\\fkrf\\source\\repos\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs [Design]",
-              "RelativeToolTip": "CadastroProdutoMVC\\View\\FrmPrincipal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T00:35:43.408Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
