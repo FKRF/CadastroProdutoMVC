@@ -28,11 +28,16 @@ namespace CadastroProdutoMVC.View
             InitializeComponent();
             _acao = acao;
             ConfigurarFormulario();
-            txtCodigo.KeyDown += txtCodigo_KeyDown;
+            txtCodigo.KeyDown += TxtCodigo_KeyDown;
         }
         private void ConfigurarFormulario()
         {
-            if(_acao == Acao.Adicionar)
+            txtCodigo.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            txtPreco.Text = string.Empty;
+            txtCusto.Text = string.Empty;
+
+            if (_acao == Acao.Adicionar)
             {
                 txtCodigo.Enabled = false;
                 txtNome.Enabled = true;
@@ -53,37 +58,60 @@ namespace CadastroProdutoMVC.View
             {
                 if (_acao == Acao.Adicionar)
                 {
-                    if (string.IsNullOrEmpty(txtNome.Text) ||
-                    string.IsNullOrEmpty(txtPreco.Text) ||
-                    string.IsNullOrEmpty(txtCusto.Text))
-                    {
-                        MessageBox.Show("Preencha todos os campos!");
-                        return;
-                    }
-                    Produto produto = new Produto();
-                    produto.Nome = txtNome.Text;
-                    produto.Preco = decimal.TryParse(txtPreco.Text, out decimal precoProduto) ? precoProduto : throw new FormatException("Preço inválido!");
-                    produto.Custo = decimal.TryParse(txtCusto.Text, out decimal custoProduto) ? custoProduto : throw new FormatException("Custo inválido!");
-                    _produtoController.AdicionarProduto(produto);
-                    MessageBox.Show("Produto cadastrado com sucesso!");
-                    Close();
+                    AdicionarProduto();
                 }
                 else if (_acao == Acao.Alterar)
                 {
-                    if(_produtoAtual == null)
-                    {
-                        MessageBox.Show("Nenhum produto foi carregado!");
-                        return;
-                    }
-                    _produtoAtual.Nome = txtNome.Text;
-                    _produtoAtual.Preco = decimal.TryParse(txtPreco.Text, out decimal precoProduto) ? precoProduto : throw new FormatException("Preço inválido!");
-                    _produtoAtual.Custo = decimal.TryParse(txtCusto.Text, out decimal custoProduto) ? custoProduto : throw new FormatException("Custo inválido!");
-                    _produtoController.AlterarProduto(_produtoAtual);
-                    MessageBox.Show("Produto atualizado com sucesso!");
-                    Close();
+                    AlterarProduto();
                 }
+                else if (_acao == Acao.Excluir)
+                {
+                    ExcluirProduto();
+                }
+                Close();
             }
-            catch(FormatException ex)
+            catch (ArgumentException ex)
+            {
+                // Captura de exceções específicas (como validações)
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Captura de exceções específicas (como falha na operação)
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Captura de exceções gerais
+                MessageBox.Show("Erro inesperado: " + ex.Message);
+            }
+
+        }
+        private void AdicionarProduto()
+        {
+            Produto produto = new Produto();
+            produto.Nome = txtNome.Text;
+            if(!decimal.TryParse(txtPreco.Text, out decimal precoProduto))
+            {
+                MessageBox.Show("Preço inválido!");
+                return;
+            }
+            if (!decimal.TryParse(txtCusto.Text, out decimal custoProduto))
+            {
+                MessageBox.Show("custo inválido!");
+                return;
+            }
+            produto.Preco = precoProduto;
+            produto.Custo = custoProduto;
+
+            try
+            {
+                produto.Validar();
+                _produtoController.AdicionarProduto(produto);
+                MessageBox.Show("Produto cadastrado com sucesso!");
+
+            }
+            catch (ArgumentException ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
@@ -91,6 +119,71 @@ namespace CadastroProdutoMVC.View
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+        }
+        private void AlterarProduto()
+        {
+            if (_produtoAtual == null)
+            {
+                MessageBox.Show("Nenhum produto foi carregado!");
+                return;
+            }
+
+            _produtoAtual.Nome = txtNome.Text;
+
+            if (!decimal.TryParse(txtPreco.Text, out decimal precoProduto))
+            {
+                MessageBox.Show("Preço inválido!");
+                return;
+            }
+            if (!decimal.TryParse(txtCusto.Text, out decimal custoProduto))
+            {
+                MessageBox.Show("Custo inválido!");
+                return;
+            }
+
+            _produtoAtual.Preco = precoProduto;
+            _produtoAtual.Custo = custoProduto;
+
+            try
+            {
+                _produtoAtual.Validar(); // Validação do modelo
+                _produtoController.AlterarProduto(_produtoAtual);
+                MessageBox.Show("Produto atualizado com sucesso!");
+            }
+            catch (ArgumentException ex)
+            {
+                // Exibindo mensagens de erro da validação
+                MessageBox.Show("Erro de validação: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Exibindo erros inesperados
+                MessageBox.Show("Erro ao atualizar produto: " + ex.Message);
+            }
+        }
+
+        private void ExcluirProduto()
+        {
+            if (_produtoAtual == null)
+            {
+                MessageBox.Show("Nenhum produto foi carregado!");
+                return;
+            }
+            txtNome.Enabled = false;
+            txtPreco.Enabled = false;
+            txtCusto.Enabled = false;
+            try
+            {
+                _produtoController.ExcluirProduto(_produtoAtual.Codigo);
+                MessageBox.Show("Produto excluído com sucesso!");
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir produto: " + ex.Message);
+            }
+            
         }
         private void BuscarProduto(object sender, EventArgs e)
         {
@@ -110,10 +203,11 @@ namespace CadastroProdutoMVC.View
                 if (_produtoAtual != null)
                 {
                     PreencherFormulario(_produtoAtual);
-                    txtNome.Enabled = true;
-                    txtPreco.Enabled = true;
-                    txtCusto.Enabled = true;
+                    txtNome.Enabled = !(_acao == Acao.Excluir);
+                    txtPreco.Enabled = !(_acao == Acao.Excluir);
+                    txtCusto.Enabled = !(_acao == Acao.Excluir);
                 }
+                
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -128,7 +222,7 @@ namespace CadastroProdutoMVC.View
                 MessageBox.Show("Erro inesperado: " + ex.Message);
             }
         }
-        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        private void TxtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -142,11 +236,11 @@ namespace CadastroProdutoMVC.View
             txtPreco.Text = produto.Preco.ToString();
             txtCusto.Text = produto.Custo.ToString();
         }
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void BtnSalvar_Click(object sender, EventArgs e)
         {
             Salvar();
         }
-        private void btnSair_Click(object sender, EventArgs e)
+        private void BtnSair_Click(object sender, EventArgs e)
         {
             Close();
         }

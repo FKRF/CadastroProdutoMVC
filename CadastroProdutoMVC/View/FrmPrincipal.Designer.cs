@@ -45,7 +45,7 @@
             btnSair.TabIndex = 0;
             btnSair.Text = "Sair";
             btnSair.UseVisualStyleBackColor = true;
-            btnSair.Click += btnSair_Click;
+            btnSair.Click += BtnSair_Click;
             // 
             // txtPesquisa
             // 
@@ -62,7 +62,7 @@
             btnPesquisar.TabIndex = 2;
             btnPesquisar.Text = "Pesquisar";
             btnPesquisar.UseVisualStyleBackColor = true;
-            btnPesquisar.Click += btnPesquisar_Click;
+            btnPesquisar.Click += BtnPesquisar_Click;
             // 
             // btnAdicionar
             // 
@@ -72,7 +72,7 @@
             btnAdicionar.TabIndex = 3;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += btnAdicionar_Click;
+            btnAdicionar.Click += BtnAdicionar_Click;
             // 
             // btnAlterar
             // 
@@ -82,7 +82,7 @@
             btnAlterar.TabIndex = 4;
             btnAlterar.Text = "Alterar";
             btnAlterar.UseVisualStyleBackColor = true;
-            btnAlterar.Click += btnAlterar_Click;
+            btnAlterar.Click += BtnAlterar_Click;
             // 
             // Excluir
             // 

@@ -112,7 +112,7 @@
             btnSalvar.TabIndex = 8;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Click += btnSalvar_Click;
+            btnSalvar.Click += BtnSalvar_Click;
             // 
             // btnSair
             // 
@@ -122,7 +122,7 @@
             btnSair.TabIndex = 9;
             btnSair.Text = "Sair";
             btnSair.UseVisualStyleBackColor = true;
-            btnSair.Click += btnSair_Click;
+            btnSair.Click += BtnSair_Click;
             // 
             // FrmBase
             // 
