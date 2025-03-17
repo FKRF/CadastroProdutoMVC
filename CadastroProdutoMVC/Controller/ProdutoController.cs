@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CadastroProdutoMVC.Model;
+using Org.BouncyCastle.Utilities.IO;
 
 namespace CadastroProdutoMVC.Controller
 {
@@ -15,6 +16,28 @@ namespace CadastroProdutoMVC.Controller
         public ProdutoController()
         {
             _produtoRepositorio = new ProdutoRepositorio();
+        }
+        public void AdicionarProduto(Produto produto)
+        {
+            produto.Validar();
+            bool produtoAdicionado = _produtoRepositorio.AdicionarProduto(produto);
+            if (!produtoAdicionado)
+                throw new InvalidOperationException("O produto não pode ser adicionado");
+        }
+        public void AlterarProduto(Produto produto)
+        {
+            if (PesquisarPorCodigo(produto.Codigo) == null)
+                throw new ArgumentNullException("O produto não pode ser nulo");
+            produto.Validar();
+            bool produtoAlterado = _produtoRepositorio.AlterarProduto(produto);
+            if (!produtoAlterado)
+                throw new InvalidOperationException("O produto não pode ser alterado");
+        }
+        public void ExcluirProduto(int codigo)
+        {
+            bool produtoExcluido = _produtoRepositorio.ExcluirProduto(codigo);
+            if (!produtoExcluido)
+                throw new InvalidOperationException("O produto não pode ser excluído");
         }
         public Produto PesquisarPorCodigo(int codigo)
         {
@@ -42,27 +65,19 @@ namespace CadastroProdutoMVC.Controller
             }
             return produtos;
         }
-        public void AdicionarProduto(Produto produto)
+        public List<Produto> ConsultarTodosPaginado(int offset, int limit)
         {
-            produto.Validar();
-            bool produtoAdicionado = _produtoRepositorio.AdicionarProduto(produto);
-            if (!produtoAdicionado)
-                throw new InvalidOperationException("O produto não pode ser adicionado");
-        }
-        public void AlterarProduto(Produto produto)
-        {
-            if(PesquisarPorCodigo(produto.Codigo) == null)
-                throw new ArgumentNullException("O produto não pode ser nulo");
-            produto.Validar();
-            bool produtoAlterado = _produtoRepositorio.AlterarProduto(produto);
-            if (!produtoAlterado)
-                throw new InvalidOperationException("O produto não pode ser alterado");
-        }
-        public void ExcluirProduto(int codigo)
-        {
-            bool produtoExcluido = _produtoRepositorio.ExcluirProduto(codigo);
-            if (!produtoExcluido)
-                throw new InvalidOperationException("O produto não pode ser excluído");
+            try
+            {
+                if (limit > 0)
+                    return _produtoRepositorio.ConsultarTodosPaginado(offset, limit);
+                else
+                    throw new ArgumentException("O limite deve ser maior que zero!");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao consultar produtos: " + ex.Message);
+            }
         }
 
     }

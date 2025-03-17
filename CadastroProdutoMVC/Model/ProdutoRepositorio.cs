@@ -14,72 +14,6 @@ namespace CadastroProdutoMVC.Model
         {
             _conexao = new Conexao();
         }
-        public Produto BuscarPorCodigo(int codigo)
-        {
-            try
-            {
-                string query = @"SELECT codigo, nome, preco, custo
-                                FROM produtos
-                                WHERE codigo = @codigo";
-                using(MySqlConnection mySqlConexao = _conexao.AbrirConexao())
-                using(MySqlCommand mySqlComando = new MySqlCommand(query, mySqlConexao))
-                {
-                    mySqlComando.Parameters.AddWithValue("@codigo", codigo);
-
-                    using MySqlDataReader reader = mySqlComando.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        return new Produto()
-                        {
-                            Codigo = reader.GetInt32(0),
-                            Nome = reader.GetString(1),
-                            Preco = reader.GetDecimal(2),
-                            Custo = reader.GetDecimal(3)
-                        };
-                    }
-
-                }
-                    throw new KeyNotFoundException($"Produto com o código {codigo} não encontrado");
-            }
-            catch(MySqlException ex)
-            {
-                throw new Exception("Erro ao acessar o banco de dados: " + ex.Message);
-            }
-        }
-        public List<Produto> BuscarPorNome(string nome)
-        {
-            List<Produto> produtos = new List<Produto>();
-            try
-            {
-                string query = @"SELECT codigo, nome, preco, custo
-                                FROM produtos
-                                WHERE nome LIKE CONCAT('%', @nome, '%')";
-                using (MySqlConnection mySqlConexao = _conexao.AbrirConexao())
-                using (MySqlCommand mySqlComando = new MySqlCommand(query, mySqlConexao))
-                {
-                    mySqlComando.Parameters.AddWithValue("@nome", nome);
-                    using (MySqlDataReader reader = mySqlComando.ExecuteReader())
-                        while (reader.Read())
-                        {
-                            produtos.Add(new Produto()
-                            {
-                                Codigo = reader.GetInt32(0),
-                                Nome = reader.GetString(1),
-                                Preco = reader.GetDecimal(2),
-                                Custo = reader.GetDecimal(3)
-                            });
-                        }
-                }
-                
-                if (produtos.Count == 0)
-                    throw new KeyNotFoundException($"Nenhum produto encontrado");
-                return produtos;
-            }
-            catch (MySqlException ex)
-            {
-                throw new Exception("Erro ao acessar o banco de dados: " + ex.Message);
-            }
-        }
         public bool AdicionarProduto(Produto produto)
         {
             try
@@ -164,5 +98,110 @@ namespace CadastroProdutoMVC.Model
                 throw new Exception("Erro inesperado: " + ex.Message);
             }
         }
+        public Produto BuscarPorCodigo(int codigo)
+        {
+            try
+            {
+                string query = @"SELECT codigo, nome, preco, custo
+                                FROM produtos
+                                WHERE codigo = @codigo";
+                using(MySqlConnection mySqlConexao = _conexao.AbrirConexao())
+                using(MySqlCommand mySqlComando = new MySqlCommand(query, mySqlConexao))
+                {
+                    mySqlComando.Parameters.AddWithValue("@codigo", codigo);
+
+                    using MySqlDataReader reader = mySqlComando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        return new Produto()
+                        {
+                            Codigo = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            Preco = reader.GetDecimal(2),
+                            Custo = reader.GetDecimal(3)
+                        };
+                    }
+
+                }
+                    throw new KeyNotFoundException($"Produto com o código {codigo} não encontrado");
+            }
+            catch(MySqlException ex)
+            {
+                throw new Exception("Erro ao acessar o banco de dados: " + ex.Message);
+            }
+        }
+        public List<Produto> BuscarPorNome(string nome)
+        {
+            List<Produto> produtos = new List<Produto>();
+            try
+            {
+                string query = @"SELECT codigo, nome, preco, custo
+                                FROM produtos
+                                WHERE nome LIKE CONCAT('%', @nome, '%')";
+                using (MySqlConnection mySqlConexao = _conexao.AbrirConexao())
+                using (MySqlCommand mySqlComando = new MySqlCommand(query, mySqlConexao))
+                {
+                    mySqlComando.Parameters.AddWithValue("@nome", nome);
+                    using (MySqlDataReader reader = mySqlComando.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            produtos.Add(new Produto()
+                            {
+                                Codigo = reader.GetInt32(0),
+                                Nome = reader.GetString(1),
+                                Preco = reader.GetDecimal(2),
+                                Custo = reader.GetDecimal(3)
+                            });
+                        }
+                }
+                
+                if (produtos.Count == 0)
+                    throw new KeyNotFoundException($"Nenhum produto encontrado");
+                return produtos;
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("Erro ao acessar o banco de dados: " + ex.Message);
+            }
+        }
+        public List<Produto> ConsultarTodosPaginado(int offset, int limit)
+        {
+            List<Produto> produtos = new List<Produto>();
+            try
+            {
+                string query = @"SELECT codigo, nome, preco, custo FROM produtos LIMIT @limit OFFSET @offset";
+                using (MySqlConnection mySqlConexao = _conexao.AbrirConexao())
+                using (MySqlCommand mySqlComando = new MySqlCommand(query, mySqlConexao))
+                {
+                    mySqlComando.Parameters.AddWithValue("@limit", limit);
+                    mySqlComando.Parameters.AddWithValue("@offset", offset);
+
+                    using (MySqlDataReader reader = mySqlComando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Produto produto = new Produto
+                            {
+                                Codigo = reader.GetInt32(0),
+                                Nome = reader.GetString(1),
+                                Preco = reader.GetDecimal(2),
+                                Custo = reader.GetDecimal(3)
+                            };
+                            produtos.Add(produto);
+                        }
+                    }
+                }
+                return produtos;
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("Erro ao consultar produtos no banco de dados: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro inesperado ao consultar produtos: " + ex.Message, ex);
+            }
+        }
+
     }
 }

@@ -35,6 +35,8 @@
             btnAlterar = new Button();
             Excluir = new Button();
             lViewProdutos = new ListView();
+            btnMostrarTodos = new Button();
+            progressBarLView = new ProgressBar();
             SuspendLayout();
             // 
             // btnSair
@@ -96,17 +98,37 @@
             // 
             // lViewProdutos
             // 
-            lViewProdutos.Location = new Point(85, 133);
+            lViewProdutos.Location = new Point(72, 92);
             lViewProdutos.Name = "lViewProdutos";
             lViewProdutos.Size = new Size(121, 97);
             lViewProdutos.TabIndex = 6;
             lViewProdutos.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnMostrarTodos
+            // 
+            btnMostrarTodos.Location = new Point(538, 100);
+            btnMostrarTodos.Name = "btnMostrarTodos";
+            btnMostrarTodos.Size = new Size(93, 27);
+            btnMostrarTodos.TabIndex = 7;
+            btnMostrarTodos.Text = "Mostrar todos";
+            btnMostrarTodos.UseVisualStyleBackColor = true;
+            btnMostrarTodos.Click += btnMostrarTodos_Click;
+            // 
+            // progressBarLView
+            // 
+            progressBarLView.Location = new Point(354, 202);
+            progressBarLView.Name = "progressBarLView";
+            progressBarLView.Size = new Size(100, 23);
+            progressBarLView.Style = ProgressBarStyle.Marquee;
+            progressBarLView.TabIndex = 8;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(progressBarLView);
+            Controls.Add(btnMostrarTodos);
             Controls.Add(lViewProdutos);
             Controls.Add(Excluir);
             Controls.Add(btnAlterar);
@@ -129,5 +151,7 @@
         private Button btnAlterar;
         private Button Excluir;
         private ListView lViewProdutos;
+        private Button btnMostrarTodos;
+        private ProgressBar progressBarLView;
     }
 }
