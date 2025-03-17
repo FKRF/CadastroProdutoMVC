@@ -1,4 +1,5 @@
 ﻿using CadastroProdutoMVC.Controller;
+using CadastroProdutoMVC.Helpers;
 using CadastroProdutoMVC.Model;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,11 @@ namespace CadastroProdutoMVC.View
     public partial class FrmBase : Form
     {
         private ProdutoController _produtoController = new ProdutoController();
+
+        private TextBox txtCodigo;
+        private TextBox txtNome;
+        private TextBox txtPreco;
+        private TextBox txtCusto;
         public enum Acao
         {
             Adicionar,
@@ -27,8 +33,28 @@ namespace CadastroProdutoMVC.View
         {
             InitializeComponent();
             _acao = acao;
+            
+            DesenharControls();
             ConfigurarFormulario();
-            txtCodigo.KeyDown += TxtCodigo_KeyDown;
+        }
+        private void DesenharControls()
+        {
+            txtCodigo = ControlHelper.CriarTextBox(28, 55, 100, 23, string.Empty, TxtCodigo_KeyDown);
+            txtNome = ControlHelper.CriarTextBox(200, 55, 200, 23);
+            txtPreco = ControlHelper.CriarTextBox(452, 55, 100, 23);
+            txtCusto = ControlHelper.CriarTextBox(587, 55, 100, 23);
+
+            Button BtnSalvar = ControlHelper.CriarButton("Salvar", 570, 400, 75, 25, BtnSalvar_Click);
+            Button BtnSair = ControlHelper.CriarButton("Salvar", 710, 400, 75, 25, BtnSair_Click);
+
+            Label lblCodigo = ControlHelper.CriarLabel("Código", 46, 20, 50, 15);
+            Label lblNome = ControlHelper.CriarLabel("Nome", 253, 18, 40, 15);
+            Label lblPreco = ControlHelper.CriarLabel("Preco", 450, 18, 37, 15);
+            Label lblCusto = ControlHelper.CriarLabel("Custo", 587, 18, 38, 15);
+
+            List<Control> controls = new List<Control> { lblCodigo, lblNome, lblPreco, lblCusto, txtCodigo, txtNome, txtPreco, txtCusto, BtnSalvar, BtnSair };
+
+            Controls.AddRange(controls.ToArray());
         }
         private void ConfigurarFormulario()
         {

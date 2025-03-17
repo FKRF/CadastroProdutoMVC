@@ -9,7 +9,10 @@ namespace CadastroProdutoMVC
 {
     public partial class FrmPrincipal : Form
     {
-        ProdutoController _produtoController;
+        private ProdutoController _produtoController;
+        private TextBox txtPesquisa;
+        private ListView lViewProdutos;
+        private ProgressBar progressBarStatus;
         // Variáveis de controle da listView
         private int offset = 0;
         private const int limit = 50;
@@ -20,12 +23,36 @@ namespace CadastroProdutoMVC
             DesenharControls();
             DesenharListView();
             _produtoController = new ProdutoController();
+        }
+        private void DesenharControls()
+        {
+            Button BtnPesquisar = ControlHelper.CriarButton("Pesquisar", 410, 40, 75, 25, BtnPesquisar_Click);
+            Button BtnMostrarTodos = ControlHelper.CriarButton("Mostrar todos", 540, 100, 100, 30, BtnMostrarTodos_Click);
+            Button BtnAdicionar = ControlHelper.CriarButton("Adicionar", 100, 400, 75, 25, BtnAdicionar_Click);
+            Button BtnAlterar = ControlHelper.CriarButton("Alterar", 270, 400, 75, 25, BtnAlterar_Click);
+            Button BtnExcluir = ControlHelper.CriarButton("Excluir", 440, 400, 75, 25, BtnExcluir_Click);
+            Button BtnSair = ControlHelper.CriarButton("Sair", 700, 400, 75, 25, BtnSair_Click);
+
+            txtPesquisa = ControlHelper.CriarTextBox(75, 40, 300, 25, string.Empty);
+
+            lViewProdutos = ControlHelper.CriarListView(70, 90, 200, 250, "Details", true);
+            lViewProdutos.Columns.Add("Código", 60);
+            lViewProdutos.Columns.Add("Nome", 180);
+            lViewProdutos.Columns.Add("Preço", 60);
+            lViewProdutos.Columns.Add("Custo", 80);
+            lViewProdutos.Width = lViewProdutos.Columns[0].Width + 
+                lViewProdutos.Columns[1].Width + lViewProdutos.Columns[2].Width + lViewProdutos.Columns[3].Width;
             lViewProdutos.MouseWheel += LviewProdutos_MouseWheel;
             lViewProdutos.ColumnClick += LViewProdutos_ColumnClick;
-            progressBarLView.Visible = false;
-            progressBarLView.Style = ProgressBarStyle.Marquee;
-        }
 
+            progressBarStatus = ControlHelper.CriarProgressBar(350, 200, 100, 25, "Marquee", false);
+
+            List<Control> controls = new List<Control>
+            {
+                BtnPesquisar, BtnMostrarTodos, BtnAdicionar, BtnAlterar, BtnExcluir, txtPesquisa, lViewProdutos, progressBarStatus
+            };
+            Controls.AddRange(controls.ToArray());
+        }
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
             lViewProdutos.Items.Clear();
@@ -87,34 +114,10 @@ namespace CadastroProdutoMVC
         {
             Close();
         }
-        private void DesenharControls()
-        {
-            Button BtnPesquisar = ControlHelper.CriarButton("Pesquisar", 410, 40, 75, 25, BtnPesquisar_Click);
-            Controls.Add(BtnPesquisar);
-            Button BtnMostrarTodos = ControlHelper.CriarButton("Mostrar todos", 540, 100, 100, 30, BtnMostrarTodos_Click);
-            Controls.Add(BtnMostrarTodos);
-            Button BtnAdicionar = ControlHelper.CriarButton("Adicionar", 100, 400, 75, 25, BtnAdicionar_Click);
-            Controls.Add(BtnAdicionar);
-            Button BtnAlterar = ControlHelper.CriarButton("Alterar", 270, 400, 75, 25, BtnAlterar_Click);
-            Controls.Add(BtnAlterar);
-            Button BtnExcluir = ControlHelper.CriarButton("Excluir", 440, 400, 75, 25, BtnExcluir_Click);
-            Controls.Add(BtnExcluir);
-            Button BtnSair = ControlHelper.CriarButton("Sair", 700, 400, 75, 25, BtnSair_Click);
-            Controls.Add(BtnSair);
-        }
+        
         private void DesenharListView()
         {
-            lViewProdutos.View = System.Windows.Forms.View.Details;
-            lViewProdutos.GridLines = true;
-            lViewProdutos.Clear();
-
-            lViewProdutos.Columns.Add("Código", 60);
-            lViewProdutos.Columns.Add("Nome", 180);
-            lViewProdutos.Columns.Add("Preço", 60);
-            lViewProdutos.Columns.Add("Custo", 80);
-            lViewProdutos.Width = lViewProdutos.Columns[0].Width + lViewProdutos.Columns[1].Width +
-                lViewProdutos.Columns[2].Width + lViewProdutos.Columns[3].Width;
-            lViewProdutos.Height = 250;
+            
         }
         private void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
@@ -133,12 +136,12 @@ namespace CadastroProdutoMVC
             if (_lViewCarregando) // evita chamar o método várias vezes
                 return;
             _lViewCarregando = true;
-            progressBarLView.Visible = true;
+            progressBarStatus.Visible = true;
             
             List<Produto> produtos = await Task.Run( () => _produtoController.ConsultarTodosPaginado(offset, limit));
             if (produtos.Count == 0)
             {
-                progressBarLView.Visible = false;
+                progressBarStatus.Visible = false;
                 _lViewCarregando = false;
                 return;
             }
@@ -151,7 +154,7 @@ namespace CadastroProdutoMVC
 
                 lViewProdutos.Items.Add(item);
             }
-            progressBarLView.Visible = false;
+            progressBarStatus.Visible = false;
             offset += limit;
             _lViewCarregando = false;
         }
@@ -169,7 +172,5 @@ namespace CadastroProdutoMVC
         {
             ListViewHelper.OrdenarListView(lViewProdutos, e.Column);
         }
-
-        
     }
 }

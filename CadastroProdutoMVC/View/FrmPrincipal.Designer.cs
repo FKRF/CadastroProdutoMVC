@@ -28,51 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtPesquisa = new TextBox();
-            lViewProdutos = new ListView();
-            progressBarLView = new ProgressBar();
             SuspendLayout();
-            // 
-            // txtPesquisa
-            // 
-            txtPesquisa.Location = new Point(72, 39);
-            txtPesquisa.Name = "txtPesquisa";
-            txtPesquisa.Size = new Size(289, 23);
-            txtPesquisa.TabIndex = 1;
-            // 
-            // lViewProdutos
-            // 
-            lViewProdutos.Location = new Point(72, 92);
-            lViewProdutos.Name = "lViewProdutos";
-            lViewProdutos.Size = new Size(121, 97);
-            lViewProdutos.TabIndex = 6;
-            lViewProdutos.UseCompatibleStateImageBehavior = false;
-            // 
-            // progressBarLView
-            // 
-            progressBarLView.Location = new Point(354, 202);
-            progressBarLView.Name = "progressBarLView";
-            progressBarLView.Size = new Size(100, 23);
-            progressBarLView.Style = ProgressBarStyle.Marquee;
-            progressBarLView.TabIndex = 8;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(progressBarLView);
-            Controls.Add(lViewProdutos);
-            Controls.Add(txtPesquisa);
             Name = "FrmPrincipal";
             Text = "Tela inicial";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private TextBox txtPesquisa;
-        private ListView lViewProdutos;
-        private ProgressBar progressBarLView;
     }
 }
