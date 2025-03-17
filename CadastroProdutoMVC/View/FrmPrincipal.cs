@@ -17,6 +17,7 @@ namespace CadastroProdutoMVC
         public FrmPrincipal()
         {
             InitializeComponent();
+            DesenharControls();
             DesenharListView();
             _produtoController = new ProdutoController();
             lViewProdutos.MouseWheel += LviewProdutos_MouseWheel;
@@ -76,7 +77,7 @@ namespace CadastroProdutoMVC
             frmBase.ShowDialog();
         }
 
-        private void Excluir_Click(object sender, EventArgs e)
+        private void BtnExcluir_Click(object sender, EventArgs e)
         {
             FrmBase frmBase = new FrmBase(FrmBase.Acao.Excluir);
             frmBase.ShowDialog();
@@ -85,6 +86,21 @@ namespace CadastroProdutoMVC
         private void BtnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void DesenharControls()
+        {
+            Button BtnPesquisar = ControlHelper.CriarButton("Pesquisar", 410, 40, 75, 25, BtnPesquisar_Click);
+            Controls.Add(BtnPesquisar);
+            Button BtnMostrarTodos = ControlHelper.CriarButton("Mostrar todos", 540, 100, 100, 30, BtnMostrarTodos_Click);
+            Controls.Add(BtnMostrarTodos);
+            Button BtnAdicionar = ControlHelper.CriarButton("Adicionar", 100, 400, 75, 25, BtnAdicionar_Click);
+            Controls.Add(BtnAdicionar);
+            Button BtnAlterar = ControlHelper.CriarButton("Alterar", 270, 400, 75, 25, BtnAlterar_Click);
+            Controls.Add(BtnAlterar);
+            Button BtnExcluir = ControlHelper.CriarButton("Excluir", 440, 400, 75, 25, BtnExcluir_Click);
+            Controls.Add(BtnExcluir);
+            Button BtnSair = ControlHelper.CriarButton("Sair", 700, 400, 75, 25, BtnSair_Click);
+            Controls.Add(BtnSair);
         }
         private void DesenharListView()
         {
@@ -100,7 +116,7 @@ namespace CadastroProdutoMVC
                 lViewProdutos.Columns[2].Width + lViewProdutos.Columns[3].Width;
             lViewProdutos.Height = 250;
         }
-        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        private void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
             MostrarTodos();
         }

@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\kim\\documents\\github\\cadastroprodutomvc\\cadastroprodutomvc\\helpers\\controlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\helpers\\controlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\kim\\documents\\github\\cadastroprodutomvc\\cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\view\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\kim\\documents\\github\\cadastroprodutomvc\\cadastroprodutomvc\\helpers\\listviewhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\helpers\\listviewhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\kim\\documents\\github\\cadastroprodutomvc\\cadastroprodutomvc\\model\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\model\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|c:\\users\\kim\\documents\\github\\cadastroprodutomvc\\cadastroprodutomvc\\controller\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34ACBA92-D2DB-4567-9E46-62DDF1AE6CAA}|CadastroProdutoMVC\\CadastroProdutoMVC.csproj|solutionrelative:cadastroprodutomvc\\controller\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,16 +30,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ListViewHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
-              "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
-              "RelativeToolTip": "CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwEAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FrmPrincipal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs",
+              "RelativeDocumentMoniker": "CadastroProdutoMVC\\View\\FrmPrincipal.cs",
+              "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs [Design]",
+              "RelativeToolTip": "CadastroProdutoMVC\\View\\FrmPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T18:09:58.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T20:07:33.776Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -49,34 +48,36 @@
               "RelativeDocumentMoniker": "CadastroProdutoMVC\\View\\FrmPrincipal.cs",
               "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\View\\FrmPrincipal.cs",
               "RelativeToolTip": "CadastroProdutoMVC\\View\\FrmPrincipal.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAuwGwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAmwGYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T00:11:18.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProdutoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "RelativeToolTip": "CadastroProdutoMVC\\Model\\ProdutoRepositorio.cs",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAKsAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ControlHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Helpers\\ControlHelper.cs",
+              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Helpers\\ControlHelper.cs",
+              "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Helpers\\ControlHelper.cs",
+              "RelativeToolTip": "CadastroProdutoMVC\\Helpers\\ControlHelper.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswCsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:23:44.823Z"
+              "WhenOpened": "2025-03-17T20:03:38.781Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Controller\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Controller\\ProdutoController.cs",
-              "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Controller\\ProdutoController.cs",
-              "RelativeToolTip": "CadastroProdutoMVC\\Controller\\ProdutoController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Title": "ListViewHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
+              "RelativeDocumentMoniker": "CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
+              "ToolTip": "C:\\Users\\Kim\\Documents\\GitHub\\CadastroProdutoMVC\\CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
+              "RelativeToolTip": "CadastroProdutoMVC\\Helpers\\ListViewHelper.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T00:03:53.832Z"
+              "WhenOpened": "2025-03-17T18:09:58.653Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -28,26 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnSair = new Button();
             txtPesquisa = new TextBox();
-            btnPesquisar = new Button();
-            btnAdicionar = new Button();
-            btnAlterar = new Button();
-            Excluir = new Button();
             lViewProdutos = new ListView();
-            btnMostrarTodos = new Button();
             progressBarLView = new ProgressBar();
             SuspendLayout();
-            // 
-            // btnSair
-            // 
-            btnSair.Location = new Point(700, 395);
-            btnSair.Name = "btnSair";
-            btnSair.Size = new Size(75, 23);
-            btnSair.TabIndex = 0;
-            btnSair.Text = "Sair";
-            btnSair.UseVisualStyleBackColor = true;
-            btnSair.Click += BtnSair_Click;
             // 
             // txtPesquisa
             // 
@@ -56,46 +40,6 @@
             txtPesquisa.Size = new Size(289, 23);
             txtPesquisa.TabIndex = 1;
             // 
-            // btnPesquisar
-            // 
-            btnPesquisar.Location = new Point(409, 39);
-            btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(75, 23);
-            btnPesquisar.TabIndex = 2;
-            btnPesquisar.Text = "Pesquisar";
-            btnPesquisar.UseVisualStyleBackColor = true;
-            btnPesquisar.Click += BtnPesquisar_Click;
-            // 
-            // btnAdicionar
-            // 
-            btnAdicionar.Location = new Point(97, 395);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(75, 23);
-            btnAdicionar.TabIndex = 3;
-            btnAdicionar.Text = "Adicionar";
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += BtnAdicionar_Click;
-            // 
-            // btnAlterar
-            // 
-            btnAlterar.Location = new Point(270, 395);
-            btnAlterar.Name = "btnAlterar";
-            btnAlterar.Size = new Size(75, 23);
-            btnAlterar.TabIndex = 4;
-            btnAlterar.Text = "Alterar";
-            btnAlterar.UseVisualStyleBackColor = true;
-            btnAlterar.Click += BtnAlterar_Click;
-            // 
-            // Excluir
-            // 
-            Excluir.Location = new Point(443, 395);
-            Excluir.Name = "Excluir";
-            Excluir.Size = new Size(75, 23);
-            Excluir.TabIndex = 5;
-            Excluir.Text = "Excluir";
-            Excluir.UseVisualStyleBackColor = true;
-            Excluir.Click += Excluir_Click;
-            // 
             // lViewProdutos
             // 
             lViewProdutos.Location = new Point(72, 92);
@@ -103,16 +47,6 @@
             lViewProdutos.Size = new Size(121, 97);
             lViewProdutos.TabIndex = 6;
             lViewProdutos.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnMostrarTodos
-            // 
-            btnMostrarTodos.Location = new Point(538, 100);
-            btnMostrarTodos.Name = "btnMostrarTodos";
-            btnMostrarTodos.Size = new Size(93, 27);
-            btnMostrarTodos.TabIndex = 7;
-            btnMostrarTodos.Text = "Mostrar todos";
-            btnMostrarTodos.UseVisualStyleBackColor = true;
-            btnMostrarTodos.Click += btnMostrarTodos_Click;
             // 
             // progressBarLView
             // 
@@ -128,14 +62,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(progressBarLView);
-            Controls.Add(btnMostrarTodos);
             Controls.Add(lViewProdutos);
-            Controls.Add(Excluir);
-            Controls.Add(btnAlterar);
-            Controls.Add(btnAdicionar);
-            Controls.Add(btnPesquisar);
             Controls.Add(txtPesquisa);
-            Controls.Add(btnSair);
             Name = "FrmPrincipal";
             Text = "Tela inicial";
             ResumeLayout(false);
@@ -143,15 +71,8 @@
         }
 
         #endregion
-
-        private Button btnSair;
         private TextBox txtPesquisa;
-        private Button btnPesquisar;
-        private Button btnAdicionar;
-        private Button btnAlterar;
-        private Button Excluir;
         private ListView lViewProdutos;
-        private Button btnMostrarTodos;
         private ProgressBar progressBarLView;
     }
 }
